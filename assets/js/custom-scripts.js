@@ -753,7 +753,7 @@ jQuery(window).on("load", function () {
 }); //===== Window onLoad Ends =====//
 
 // counting days to new year
-const countDownDateTime = new Date(2022, 10, 24, 0, 0, 0, 0).getTime();
+const countDownDateTime = new Date(2024, 10, 7, 0, 0, 0, 0).getTime();
 const daysValue = document.getElementsByClassName("days");
 const hoursValue = document.getElementsByClassName("hours");
 const minutesValue = document.getElementsByClassName("minutes");
@@ -763,16 +763,18 @@ let x = setInterval(function () {
   const dateTimeNow = new Date().getTime();
   let difference = countDownDateTime - dateTimeNow;
   // calculating time and assigning values
-  
+  // month indexed at 0 ie. Jan=0
+  const daysLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hoursLeft = Math.floor(
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutesLeft = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const secondsLeft = Math.floor((difference % (1000 * 60)) / 1000);
   for (let index = 0; index < 3; index++) {
-    daysValue[index].innerHTML = Math.floor(difference / (1000 * 60 * 60 * 24));
-    hoursValue[index].innerHTML = Math.floor(
-      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    minutesValue[index].innerHTML = Math.floor(
-      (difference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    secondsValue[index].innerHTML = Math.floor((difference % (1000 * 60)) / 1000);
+    daysValue[index].innerHTML = daysLeft > 0 ? daysLeft : 0;
+    hoursValue[index].innerHTML = hoursLeft > 0 ? hoursLeft : 0;
+    minutesValue[index].innerHTML = minutesLeft > 0 ? minutesLeft : 0;
+    secondsValue[index].innerHTML = secondsLeft > 0 ? secondsLeft : 0;
   }
   if (difference < 0) {
     clearInterval(x);
