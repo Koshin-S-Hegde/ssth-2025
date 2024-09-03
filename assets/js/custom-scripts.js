@@ -753,7 +753,7 @@ jQuery(window).on("load", function () {
 }); //===== Window onLoad Ends =====//
 
 // counting days to new year
-const countDownDateTime = new Date(2024, 10, 7, 0, 0, 0, 0).getTime();
+const countDownDateTime = new Date(2024, 10, 7, 8, 30, 0, 0).getTime();
 const daysValue = document.getElementsByClassName("days");
 const hoursValue = document.getElementsByClassName("hours");
 const minutesValue = document.getElementsByClassName("minutes");
