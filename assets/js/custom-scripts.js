@@ -294,9 +294,9 @@ $(document).ready(function () {
       pauseOnFocus: false,
       pauseOnHover: false,
       prevArrow:
-        "<button type='button' class='slick-prev'><i class='flaticon-arrow-pointing-to-left'></i>Prev Event</button>",
+        "<button type='button' class='slick-prev'><i class='flaticon-arrow-pointing-to-left'></i></button>",
       nextArrow:
-        "<button type='button' class='slick-next'>Next Event<i class='flaticon-trajectory'></i></button>",
+        "<button type='button' class='slick-next'><i class='flaticon-trajectory'></i></button>",
       responsive: [
         {
           breakpoint: 981,
